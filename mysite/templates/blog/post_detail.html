@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block body_block %}
+<div class="centerstage">
+
+
+        <div class="jumbotron">
+            <h1> {{ post_detail.title }}  </h1>
+            <p>Published by {{ post_detail.name }}</p>
+            <p> {{ post_detail.text }}</p>
+
+        </div>
+
+
+</div>
+
+<div class="container">
+  <p><a class="btn btn-warning" href="{% url 'blog:update' pk=post_detail.pk %}">Update</a></p>
+  <p><a class="btn btn-danger" href="{% url 'blog:delete' pk=post_detail.pk %}">Delete</a></p>
+
+
+</div>
+{% endblock %}
